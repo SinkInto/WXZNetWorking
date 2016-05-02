@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DF20C17B171FCEDF3060AFCC /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 56A3708870F5A790F44AEF51 /* libPods.a */; };
 		F18AB5C21CD75E8D00A433FF /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F18AB5C11CD75E8D00A433FF /* main.m */; };
 		F18AB5C51CD75E8D00A433FF /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F18AB5C41CD75E8D00A433FF /* AppDelegate.m */; };
 		F18AB5C81CD75E8D00A433FF /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F18AB5C71CD75E8D00A433FF /* ViewController.m */; };
@@ -15,6 +16,13 @@
 		F18AB5D01CD75E8D00A433FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F18AB5CE1CD75E8D00A433FF /* LaunchScreen.storyboard */; };
 		F18AB5DB1CD75E8D00A433FF /* WXZNetWorkingTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F18AB5DA1CD75E8D00A433FF /* WXZNetWorkingTests.m */; };
 		F18AB5E61CD75E8D00A433FF /* WXZNetWorkingUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = F18AB5E51CD75E8D00A433FF /* WXZNetWorkingUITests.m */; };
+		F18AB6021CD7601D00A433FF /* WXZBatchRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = F18AB5F51CD7601D00A433FF /* WXZBatchRequest.m */; };
+		F18AB6031CD7601D00A433FF /* WXZBatchRequestManager.m in Sources */ = {isa = PBXBuildFile; fileRef = F18AB5F71CD7601D00A433FF /* WXZBatchRequestManager.m */; };
+		F18AB6041CD7601D00A433FF /* WXZNetWorkConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = F18AB5F91CD7601D00A433FF /* WXZNetWorkConfig.m */; };
+		F18AB6051CD7601D00A433FF /* WXZNetWorkPrivite.m in Sources */ = {isa = PBXBuildFile; fileRef = F18AB5FB1CD7601D00A433FF /* WXZNetWorkPrivite.m */; };
+		F18AB6061CD7601D00A433FF /* WXZParamsFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = F18AB5FD1CD7601D00A433FF /* WXZParamsFilter.m */; };
+		F18AB6071CD7601D00A433FF /* WXZRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = F18AB5FF1CD7601D00A433FF /* WXZRequest.m */; };
+		F18AB6081CD7601D00A433FF /* WXZRequestManager.m in Sources */ = {isa = PBXBuildFile; fileRef = F18AB6011CD7601D00A433FF /* WXZRequestManager.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +43,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		56A3708870F5A790F44AEF51 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		651B682EA3732EF674254EC4 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		E7DCC0FB756CDBD8E2756ACD /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		F18AB5BD1CD75E8D00A433FF /* WXZNetWorking.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WXZNetWorking.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F18AB5C11CD75E8D00A433FF /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		F18AB5C31CD75E8D00A433FF /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -51,6 +62,20 @@
 		F18AB5E11CD75E8D00A433FF /* WXZNetWorkingUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WXZNetWorkingUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F18AB5E51CD75E8D00A433FF /* WXZNetWorkingUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WXZNetWorkingUITests.m; sourceTree = "<group>"; };
 		F18AB5E71CD75E8D00A433FF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F18AB5F41CD7601D00A433FF /* WXZBatchRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXZBatchRequest.h; sourceTree = "<group>"; };
+		F18AB5F51CD7601D00A433FF /* WXZBatchRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WXZBatchRequest.m; sourceTree = "<group>"; };
+		F18AB5F61CD7601D00A433FF /* WXZBatchRequestManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXZBatchRequestManager.h; sourceTree = "<group>"; };
+		F18AB5F71CD7601D00A433FF /* WXZBatchRequestManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WXZBatchRequestManager.m; sourceTree = "<group>"; };
+		F18AB5F81CD7601D00A433FF /* WXZNetWorkConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXZNetWorkConfig.h; sourceTree = "<group>"; };
+		F18AB5F91CD7601D00A433FF /* WXZNetWorkConfig.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WXZNetWorkConfig.m; sourceTree = "<group>"; };
+		F18AB5FA1CD7601D00A433FF /* WXZNetWorkPrivite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXZNetWorkPrivite.h; sourceTree = "<group>"; };
+		F18AB5FB1CD7601D00A433FF /* WXZNetWorkPrivite.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WXZNetWorkPrivite.m; sourceTree = "<group>"; };
+		F18AB5FC1CD7601D00A433FF /* WXZParamsFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXZParamsFilter.h; sourceTree = "<group>"; };
+		F18AB5FD1CD7601D00A433FF /* WXZParamsFilter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WXZParamsFilter.m; sourceTree = "<group>"; };
+		F18AB5FE1CD7601D00A433FF /* WXZRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXZRequest.h; sourceTree = "<group>"; };
+		F18AB5FF1CD7601D00A433FF /* WXZRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WXZRequest.m; sourceTree = "<group>"; };
+		F18AB6001CD7601D00A433FF /* WXZRequestManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXZRequestManager.h; sourceTree = "<group>"; };
+		F18AB6011CD7601D00A433FF /* WXZRequestManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WXZRequestManager.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +83,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DF20C17B171FCEDF3060AFCC /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -78,6 +104,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		352C00DF0EA1664C83BDCC7C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				56A3708870F5A790F44AEF51 /* libPods.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		9EBD4093EE04C0817816D715 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				651B682EA3732EF674254EC4 /* Pods.debug.xcconfig */,
+				E7DCC0FB756CDBD8E2756ACD /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		F18AB5B41CD75E8D00A433FF = {
 			isa = PBXGroup;
 			children = (
@@ -85,6 +128,8 @@
 				F18AB5D91CD75E8D00A433FF /* WXZNetWorkingTests */,
 				F18AB5E41CD75E8D00A433FF /* WXZNetWorkingUITests */,
 				F18AB5BE1CD75E8D00A433FF /* Products */,
+				9EBD4093EE04C0817816D715 /* Pods */,
+				352C00DF0EA1664C83BDCC7C /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -101,6 +146,7 @@
 		F18AB5BF1CD75E8D00A433FF /* WXZNetWorking */ = {
 			isa = PBXGroup;
 			children = (
+				F18AB5F31CD7601D00A433FF /* Src */,
 				F18AB5C31CD75E8D00A433FF /* AppDelegate.h */,
 				F18AB5C41CD75E8D00A433FF /* AppDelegate.m */,
 				F18AB5C61CD75E8D00A433FF /* ViewController.h */,
@@ -140,6 +186,27 @@
 			path = WXZNetWorkingUITests;
 			sourceTree = "<group>";
 		};
+		F18AB5F31CD7601D00A433FF /* Src */ = {
+			isa = PBXGroup;
+			children = (
+				F18AB5F41CD7601D00A433FF /* WXZBatchRequest.h */,
+				F18AB5F51CD7601D00A433FF /* WXZBatchRequest.m */,
+				F18AB5F61CD7601D00A433FF /* WXZBatchRequestManager.h */,
+				F18AB5F71CD7601D00A433FF /* WXZBatchRequestManager.m */,
+				F18AB5F81CD7601D00A433FF /* WXZNetWorkConfig.h */,
+				F18AB5F91CD7601D00A433FF /* WXZNetWorkConfig.m */,
+				F18AB5FA1CD7601D00A433FF /* WXZNetWorkPrivite.h */,
+				F18AB5FB1CD7601D00A433FF /* WXZNetWorkPrivite.m */,
+				F18AB5FC1CD7601D00A433FF /* WXZParamsFilter.h */,
+				F18AB5FD1CD7601D00A433FF /* WXZParamsFilter.m */,
+				F18AB5FE1CD7601D00A433FF /* WXZRequest.h */,
+				F18AB5FF1CD7601D00A433FF /* WXZRequest.m */,
+				F18AB6001CD7601D00A433FF /* WXZRequestManager.h */,
+				F18AB6011CD7601D00A433FF /* WXZRequestManager.m */,
+			);
+			path = Src;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -147,9 +214,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F18AB5EA1CD75E8D00A433FF /* Build configuration list for PBXNativeTarget "WXZNetWorking" */;
 			buildPhases = (
+				3C7A77C35325B762F5446D1A /* Check Pods Manifest.lock */,
 				F18AB5B91CD75E8D00A433FF /* Sources */,
 				F18AB5BA1CD75E8D00A433FF /* Frameworks */,
 				F18AB5BB1CD75E8D00A433FF /* Resources */,
+				32CB3C8F45A36602781B038C /* Embed Pods Frameworks */,
+				0377934A0E73BCDCD303CAEA /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -265,14 +335,69 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		0377934A0E73BCDCD303CAEA /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		32CB3C8F45A36602781B038C /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		3C7A77C35325B762F5446D1A /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		F18AB5B91CD75E8D00A433FF /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F18AB6071CD7601D00A433FF /* WXZRequest.m in Sources */,
 				F18AB5C81CD75E8D00A433FF /* ViewController.m in Sources */,
 				F18AB5C51CD75E8D00A433FF /* AppDelegate.m in Sources */,
 				F18AB5C21CD75E8D00A433FF /* main.m in Sources */,
+				F18AB6041CD7601D00A433FF /* WXZNetWorkConfig.m in Sources */,
+				F18AB6031CD7601D00A433FF /* WXZBatchRequestManager.m in Sources */,
+				F18AB6081CD7601D00A433FF /* WXZRequestManager.m in Sources */,
+				F18AB6021CD7601D00A433FF /* WXZBatchRequest.m in Sources */,
+				F18AB6061CD7601D00A433FF /* WXZParamsFilter.m in Sources */,
+				F18AB6051CD7601D00A433FF /* WXZNetWorkPrivite.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -413,6 +538,7 @@
 		};
 		F18AB5EB1CD75E8D00A433FF /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 651B682EA3732EF674254EC4 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = WXZNetWorking/Info.plist;
@@ -424,6 +550,7 @@
 		};
 		F18AB5EC1CD75E8D00A433FF /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E7DCC0FB756CDBD8E2756ACD /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = WXZNetWorking/Info.plist;
@@ -498,6 +625,7 @@
 				F18AB5EC1CD75E8D00A433FF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		F18AB5ED1CD75E8D00A433FF /* Build configuration list for PBXNativeTarget "WXZNetWorkingTests" */ = {
 			isa = XCConfigurationList;
@@ -506,6 +634,7 @@
 				F18AB5EF1CD75E8D00A433FF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		F18AB5F01CD75E8D00A433FF /* Build configuration list for PBXNativeTarget "WXZNetWorkingUITests" */ = {
 			isa = XCConfigurationList;
@@ -514,6 +643,7 @@
 				F18AB5F21CD75E8D00A433FF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
