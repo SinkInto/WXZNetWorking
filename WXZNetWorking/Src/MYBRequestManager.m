@@ -6,19 +6,19 @@
 //  Copyright © 2016年 wangxiangzhao. All rights reserved.
 //
 
-#import "WXZRequestManager.h"
-#import "WXZNetWorkPrivite.h"
-#import "WXZNetWorkConfig.h"
-#import "WXZRequest.h"
+#import "MYBRequestManager.h"
+#import "MYBNetWorkPrivite.h"
+#import "MYBNetWorkConfig.h"
+#import "MYBRequest.h"
 
-@implementation WXZRequestManager {
+@implementation MYBRequestManager {
     AFHTTPSessionManager *_manager;
-    WXZNetWorkConfig *_config;
+    MYBNetWorkConfig *_config;
     NSMutableDictionary *_requestsRecord;
 }
 
 
-+ (WXZRequestManager *)sharedInstance {
++ (MYBRequestManager *)sharedInstance {
     static id sharedInstance = nil;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
@@ -30,7 +30,7 @@
 - (id)init {
     self = [super init];
     if (self) {
-        _config = [WXZNetWorkConfig sharedInstance];
+        _config = [MYBNetWorkConfig sharedInstance];
         _manager = [AFHTTPSessionManager manager];
         _requestsRecord = [NSMutableDictionary dictionary];
         _manager.operationQueue.maxConcurrentOperationCount = 5;
@@ -38,13 +38,13 @@
     return self;
 }
 
-- (void)addRequest:(WXZRequest *)request {
+- (void)addRequest:(MYBRequest *)request {
     
     NSString *url = [self buildRequestUrl:request];
     id params = [self buildRequestParams:request];
-    if (request.serializerType == WXZRequestSerializerTypeHTTP) {
+    if (request.serializerType == MYBRequestSerializerTypeHTTP) {
         _manager.requestSerializer = [AFHTTPRequestSerializer serializer];
-    } else if (request.serializerType == WXZRequestSerializerTypeJSON) {
+    } else if (request.serializerType == MYBRequestSerializerTypeJSON) {
         _manager.requestSerializer = [AFJSONRequestSerializer serializer];
     }
     
@@ -76,7 +76,7 @@
         }];
     } else {
         switch (request.method) {
-            case WXZRequestMethodGet:
+            case MYBRequestMethodGet:
             {
                 request.sessionTask = [_manager GET:url parameters:params progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
                     [self handleRequestResultWithTask:task resopnseObject:responseObject error:nil];
@@ -86,7 +86,7 @@
             }
                 break;
             
-            case WXZRequestMethodPut:
+            case MYBRequestMethodPut:
             {
                 request.sessionTask = [_manager PUT:url parameters:params success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
                     [self handleRequestResultWithTask:task resopnseObject:responseObject error:nil];
@@ -96,7 +96,7 @@
             }
                 break;
                 
-            case WXZRequestMethodPost:
+            case MYBRequestMethodPost:
             {
                 if (!request.formDataBlock)
                     request.sessionTask = [_manager POST:url parameters:params progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
@@ -113,7 +113,7 @@
             }
                 break;
                 
-            case WXZRequestMethodDelete:
+            case MYBRequestMethodDelete:
             {
                 request.sessionTask = [_manager DELETE:url parameters:params success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
                     [self handleRequestResultWithTask:task resopnseObject:responseObject error:nil];
@@ -123,7 +123,7 @@
             }
                 break;
                 
-            case WXZRequestMethodHead:
+            case MYBRequestMethodHead:
             {
                 request.sessionTask = [_manager HEAD:url parameters:params success:^(NSURLSessionDataTask * _Nonnull task) {
                     [self handleRequestResultWithTask:task resopnseObject:nil error:nil];
@@ -133,7 +133,7 @@
             }
                 break;
                 
-            case WXZRequestMethodPatch:
+            case MYBRequestMethodPatch:
             {
                 request.sessionTask = [_manager PATCH:url parameters:params success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
                     [self handleRequestResultWithTask:task resopnseObject:responseObject error:nil];
@@ -151,7 +151,7 @@
     
 }
 
-- (void)cancelRequest:(WXZRequest *)request {
+- (void)cancelRequest:(MYBRequest *)request {
     [request.sessionTask cancel];
     [self removeOperation:request];
     [request clearCompletionBlock];
@@ -160,13 +160,13 @@
 - (void)cancelAllRequests {
     NSDictionary *copyRecord = [_requestsRecord copy];
     for (NSString *key in copyRecord) {
-        WXZRequest *request = copyRecord[key];
+        MYBRequest *request = copyRecord[key];
         [request stop];
     }
 }
 
 /// 根据request和networkConfig构建url
-- (NSString *)buildRequestUrl:(WXZRequest *)request {
+- (NSString *)buildRequestUrl:(MYBRequest *)request {
     NSString *detailUrl = [request requestUrl];
     if ([detailUrl hasPrefix:@"http"]) {
         return detailUrl;
@@ -189,19 +189,21 @@
     return [NSString stringWithFormat:@"%@%@", baseUrl, detailUrl];
 }
 
-- (NSDictionary *)buildRequestParams:(WXZRequest *)request {
+- (NSDictionary *)buildRequestParams:(MYBRequest *)request {
     NSDictionary *params = request.params;
     if (params == nil) return params;
     NSArray *filters = [_config paramFilters];
     for (id<MYBParamsFilterProtocol> f in filters) {
-        params = [f filterOriginParams:request.params];
+        params = [f filterOriginParams:params];
     }
+    
+    NSLog(@"%@",params);
     return params;
 }
 
 - (void)handleRequestResultWithTask:(NSURLSessionDataTask *)task resopnseObject:(id)responseObject error:(NSError *)error {
     NSString *key = [self requestHashKey:task];
-    WXZRequest *_request = _requestsRecord[key];
+    MYBRequest *_request = _requestsRecord[key];
     _request.responseObject = responseObject;
     _request.responseError = error;
     
@@ -226,7 +228,7 @@
     return key;
 }
 
-- (void)addOperation:(WXZRequest *)request {
+- (void)addOperation:(MYBRequest *)request {
     if (request.sessionTask != nil) {
         NSString *key = [self requestHashKey:request.sessionTask];
         @synchronized(self) {
@@ -235,7 +237,7 @@
     }
 }
 
-- (void)removeOperation:(WXZRequest *)request {
+- (void)removeOperation:(MYBRequest *)request {
     NSString *key = [self requestHashKey:request.sessionTask];
     @synchronized(self) {
         [_requestsRecord removeObjectForKey:key];

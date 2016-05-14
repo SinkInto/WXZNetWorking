@@ -10,7 +10,7 @@
 
 FOUNDATION_EXPORT void MYBLog(NSString *format, ...) NS_FORMAT_FUNCTION(1,2);
 
-@interface WXZNetWorkPrivite : NSObject
+@interface MYBNetWorkPrivite : NSObject
 
 + (NSDictionary *)paramsWithOriginParams:(NSDictionary *)originParams appendParams:(NSDictionary *)params;
 

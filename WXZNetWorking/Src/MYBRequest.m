@@ -6,24 +6,24 @@
 //  Copyright © 2016年 wangxiangzhao. All rights reserved.
 //
 
-#import "WXZRequest.h"
-#import "WXZRequestManager.h"
+#import "MYBRequest.h"
+#import "MYBRequestManager.h"
 
 #define TIME_OUT 15
 #define UPLOAD_IMAGE_TIME_OUT 60
 
-@interface WXZRequest ()
+@interface MYBRequest ()
 
 
 @end
 
-@implementation WXZRequest
+@implementation MYBRequest
 
 - (id)initWithRequestUrl:(NSString *)requestUrl params:(NSDictionary *)params {
-    return [self initWithMethod:WXZRequestMethodPost requestUrl:requestUrl params:params];
+    return [self initWithMethod:MYBRequestMethodPost requestUrl:requestUrl params:params];
 }
 
-- (id)initWithMethod:(WXZRequestMethod)method requestUrl:(NSString *)requestUrl params:(NSDictionary *)params {
+- (id)initWithMethod:(MYBRequestMethod)method requestUrl:(NSString *)requestUrl params:(NSDictionary *)params {
     self = [self init];
     if (self) {
         self.method = method;
@@ -36,18 +36,18 @@
 - (instancetype)init {
     self = [super init];
     if (self) {
-        self.serializerType = WXZRequestSerializerTypeJSON;
+        self.serializerType = MYBRequestSerializerTypeJSON;
     }
     return self;
 }
 
 - (void)start {
-  [[WXZRequestManager sharedInstance] addRequest:self];
+  [[MYBRequestManager sharedInstance] addRequest:self];
 }
 
 /// remove self from request queue
 - (void)stop {
-    [[WXZRequestManager sharedInstance] cancelRequest:self];
+    [[MYBRequestManager sharedInstance] cancelRequest:self];
 }
 
 - (void)startWithCompletionBlockWithSuccess:(MYBRequestCompletionBlock)success
@@ -67,8 +67,8 @@
     self.failureCompletionBlock = nil;
 }
 
-- (WXZRequestMethod)method {
-    return _method == WXZRequestMethodNone ? WXZRequestMethodPost : _method;
+- (MYBRequestMethod)method {
+    return _method == MYBRequestMethodNone ? MYBRequestMethodPost : _method;
 }
 
 - (NSTimeInterval)timeOutInterval {
@@ -92,7 +92,7 @@
 @end
 
 
-@implementation WXZRequest (Signal)
+@implementation MYBRequest (Signal)
 
 - (RACSignal *)startWithCompletionSignal {
     [self start];

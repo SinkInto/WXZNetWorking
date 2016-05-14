@@ -7,15 +7,15 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "WXZBatchRequest.h"
+#import "MYBBatchRequest.h"
 
-@interface WXZBatchRequestManager : NSObject
+@interface MYBBatchRequestManager : NSObject
 
-+ (WXZBatchRequestManager *)sharedInstance;
++ (MYBBatchRequestManager *)sharedInstance;
 
-- (void)addBatchRequest:(WXZBatchRequest *)request;
+- (void)addBatchRequest:(MYBBatchRequest *)request;
 
-- (void)removeBatchRequest:(WXZBatchRequest *)request;
+- (void)removeBatchRequest:(MYBBatchRequest *)request;
 
 - (void)removeAllBatchRequests;
 

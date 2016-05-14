@@ -7,19 +7,19 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "WXZRequest.h"
+#import "MYBRequest.h"
 
-@interface WXZRequestManager : NSObject
+@interface MYBRequestManager : NSObject
 
-+ (WXZRequestManager *)sharedInstance;
++ (MYBRequestManager *)sharedInstance;
 
-- (void)addRequest:(WXZRequest *)request;
+- (void)addRequest:(MYBRequest *)request;
 
-- (void)cancelRequest:(WXZRequest *)request;
+- (void)cancelRequest:(MYBRequest *)request;
 
 - (void)cancelAllRequests;
 
 /// 根据request和networkConfig构建url
-- (NSString *)buildRequestUrl:(WXZRequest *)request;
+- (NSString *)buildRequestUrl:(MYBRequest *)request;
 
 @end

@@ -6,7 +6,7 @@
 //  Copyright © 2016年 wangxiangzhao. All rights reserved.
 //
 
-#import "WXZNetWorkPrivite.h"
+#import "MYBNetWorkPrivite.h"
 
 void MYBLog(NSString *format, ...) {
 #ifdef DEBUG
@@ -17,7 +17,7 @@ void MYBLog(NSString *format, ...) {
 #endif
 }
 
-@implementation WXZNetWorkPrivite
+@implementation MYBNetWorkPrivite
 
 + (NSDictionary *)paramsWithOriginParams:(NSDictionary *)originParams appendParams:(NSDictionary *)params {
     if (originParams == nil) return nil;

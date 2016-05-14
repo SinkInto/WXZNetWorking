@@ -7,17 +7,17 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "WXZRequest.h"
+#import "MYBRequest.h"
 
-@interface WXZBatchRequest : NSObject
+@interface MYBBatchRequest : NSObject
 
-- (WXZBatchRequest *)initWithRequests:(NSArray *)requests;
+- (MYBBatchRequest *)initWithRequests:(NSArray *)requests;
 
 - (void)stop;
 
-- (void)addRequest:(WXZRequest *)request;
+- (void)addRequest:(MYBRequest *)request;
 
-- (void)removeRequest:(WXZRequest *)request;
+- (void)removeRequest:(MYBRequest *)request;
 
 - (RACSignal *)batchCompletionSignal;
 

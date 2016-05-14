@@ -10,34 +10,34 @@
 #import "ReactiveCocoa.h"
 #import "AFNetworking.h"
 
-typedef NS_ENUM(NSInteger , WXZRequestMethod) {
-    WXZRequestMethodNone,
-    WXZRequestMethodGet,
-    WXZRequestMethodPost,
-    WXZRequestMethodHead,
-    WXZRequestMethodPut,
-    WXZRequestMethodDelete,
-    WXZRequestMethodPatch,
+typedef NS_ENUM(NSInteger , MYBRequestMethod) {
+    MYBRequestMethodNone,
+    MYBRequestMethodGet,
+    MYBRequestMethodPost,
+    MYBRequestMethodHead,
+    MYBRequestMethodPut,
+    MYBRequestMethodDelete,
+    MYBRequestMethodPatch,
 };
 
-typedef NS_ENUM(NSInteger , WXZRequestSerializerType) {
-    WXZRequestSerializerTypeHTTP = 0,
-    WXZRequestSerializerTypeJSON,
+typedef NS_ENUM(NSInteger , MYBRequestSerializerType) {
+    MYBRequestSerializerTypeHTTP = 0,
+    MYBRequestSerializerTypeJSON,
 };
 
 
-@class WXZRequest;
+@class MYBRequest;
 
-typedef void(^MYBRequestCompletionBlock)(__kindof WXZRequest *request);
+typedef void(^MYBRequestCompletionBlock)(__kindof MYBRequest *request);
 typedef void (^FormDataBlock)(id <AFMultipartFormData> formData);
 
-@interface WXZRequest : NSObject
+@interface MYBRequest : NSObject
 
 - (id)initWithRequestUrl:(NSString *)requestUrl params:(NSDictionary *)params;
-- (id)initWithMethod:(WXZRequestMethod)method requestUrl:(NSString *)requestUrl params:(NSDictionary *)params;
+- (id)initWithMethod:(MYBRequestMethod)method requestUrl:(NSString *)requestUrl params:(NSDictionary *)params;
 
-@property (nonatomic, assign) WXZRequestMethod method;
-@property (nonatomic, assign) WXZRequestSerializerType serializerType;
+@property (nonatomic, assign) MYBRequestMethod method;
+@property (nonatomic, assign) MYBRequestSerializerType serializerType;
 
 @property (nonatomic, copy) NSString *baseUrl;
 @property (nonatomic, copy) NSString *cdnUrl;
@@ -90,7 +90,7 @@ typedef void (^FormDataBlock)(id <AFMultipartFormData> formData);
 
 
 
-@interface WXZRequest (Signal)
+@interface MYBRequest (Signal)
 
 - (RACSignal *)startWithCompletionSignal;
 - (RACSignal *)completionSignal;

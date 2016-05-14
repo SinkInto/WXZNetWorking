@@ -6,17 +6,17 @@
 //  Copyright © 2016年 wangxiangzhao. All rights reserved.
 //
 
-#import "WXZBatchRequestManager.h"
+#import "MYBBatchRequestManager.h"
 
-@interface WXZBatchRequestManager()
+@interface MYBBatchRequestManager()
 
 @property (nonatomic, strong) NSMutableArray *requests;
 
 @end
 
-@implementation WXZBatchRequestManager
+@implementation MYBBatchRequestManager
 
-+ (WXZBatchRequestManager *)sharedInstance {
++ (MYBBatchRequestManager *)sharedInstance {
     static id sharedInstance = nil;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
@@ -33,13 +33,13 @@
     return self;
 }
 
-- (void)addBatchRequest:(WXZBatchRequest *)request {
+- (void)addBatchRequest:(MYBBatchRequest *)request {
     @synchronized(self) {
         [_requests addObject:request];
     }
 }
 
-- (void)removeBatchRequest:(WXZBatchRequest *)request {
+- (void)removeBatchRequest:(MYBBatchRequest *)request {
     @synchronized(self) {
         [_requests removeObject:request];
     }

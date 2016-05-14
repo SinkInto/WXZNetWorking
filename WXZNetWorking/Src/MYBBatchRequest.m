@@ -6,15 +6,15 @@
 //  Copyright © 2016年 wangxiangzhao. All rights reserved.
 //
 
-#import "WXZBatchRequest.h"
-#import "WXZNetWorkPrivite.h"
-#import "WXZBatchRequestManager.h"
+#import "MYBBatchRequest.h"
+#import "MYBNetWorkPrivite.h"
+#import "MYBBatchRequestManager.h"
 
-@implementation WXZBatchRequest {
+@implementation MYBBatchRequest {
     NSMutableArray *_requests;
 }
 
-- (WXZBatchRequest *)initWithRequests:(NSArray *)requests {
+- (MYBBatchRequest *)initWithRequests:(NSArray *)requests {
     self = [super init];
     if (self) {
         _requests = [NSMutableArray arrayWithArray:requests];
@@ -24,22 +24,22 @@
 
 - (void)stop {
     [self clearRequest];
-    [[WXZBatchRequestManager sharedInstance] removeBatchRequest:self];
+    [[MYBBatchRequestManager sharedInstance] removeBatchRequest:self];
 }
 
-- (void)addRequest:(WXZRequest *)request {
-    if ([request isKindOfClass:[WXZRequest class]]) [_requests addObject:request];
+- (void)addRequest:(MYBRequest *)request {
+    if ([request isKindOfClass:[MYBRequest class]]) [_requests addObject:request];
 }
 
-- (void)removeRequest:(WXZRequest *)request {
+- (void)removeRequest:(MYBRequest *)request {
     [_requests removeObject:request];
 }
 
 - (RACSignal *)batchCompletionSignal {
-    [[WXZBatchRequestManager sharedInstance] addBatchRequest:self];
+    [[MYBBatchRequestManager sharedInstance] addBatchRequest:self];
     NSMutableArray *signals = [NSMutableArray array];
-    for (WXZRequest *request in _requests) {
-        if ([request isKindOfClass:[WXZRequest class]]) {
+    for (MYBRequest *request in _requests) {
+        if ([request isKindOfClass:[MYBRequest class]]) {
             [signals addObject:request.startWithCompletionSignal];
         } else {
             MYBLog(@"Error, request item must be MYBRequest instance.");
@@ -66,7 +66,7 @@
 }
 
 - (void)clearRequest {
-    for (WXZRequest *request in _requests) {
+    for (MYBRequest *request in _requests) {
         [request stop];
     }
 }

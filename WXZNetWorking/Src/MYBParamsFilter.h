@@ -7,12 +7,14 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "WXZNetWorkConfig.h"
+#import "MYBNetWorkConfig.h"
 
 
-@interface WXZParamsFilter : NSObject <MYBParamsFilterProtocol>
+@interface MYBParamsFilter : NSObject <MYBParamsFilterProtocol>
 
-+ (WXZParamsFilter *)filterWithParams:(NSDictionary *)params;
++ (MYBParamsFilter *)filterWithParams:(NSDictionary *)params;
+
+- (void)setFilterValue:(id)filterValue forKey:(NSString *)key;
 
 - (NSDictionary *)filterOriginParams:(NSDictionary *)originParams;
 
