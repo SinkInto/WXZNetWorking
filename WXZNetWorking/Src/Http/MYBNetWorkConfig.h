@@ -16,6 +16,7 @@
 
 @end
 
+
 @interface MYBNetWorkConfig : NSObject
 
 + (MYBNetWorkConfig *)sharedInstance;
@@ -23,7 +24,6 @@
 @property (strong, nonatomic) NSString *baseUrl;
 @property (strong, nonatomic) NSString *cdnUrl;
 @property (strong, nonatomic, readonly) NSArray *paramFilters;
-
 
 - (void)addParamFilter:(id<MYBParamsFilterProtocol>)filter;
 - (id<MYBParamsFilterProtocol>)filterAtIndex:(NSInteger)index;

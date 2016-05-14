@@ -8,6 +8,7 @@
 
 #import "MYBRequest.h"
 #import "MYBRequestManager.h"
+#import "MYBNetWorkConfig.h"
 
 #define TIME_OUT 15
 #define UPLOAD_IMAGE_TIME_OUT 60
@@ -75,6 +76,12 @@
     return _timeOutInterval == 0 ? TIME_OUT : _timeOutInterval;
 }
 
+- (void)setResponseObject:(id)responseObject {
+    _responseObject = responseObject;
+    if (self.associatedClass) {
+        _responseObject = [self.associatedClass httpResponseObject:responseObject];
+    }
+}
 
 - (NSDictionary *)responseHeaders {
     return self.response.allHeaderFields;

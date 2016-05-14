@@ -7,6 +7,7 @@
 //
 
 #import "MYBNetWorkPrivite.h"
+#import "MYBHttpModel.h"
 
 void MYBLog(NSString *format, ...) {
 #ifdef DEBUG
@@ -25,6 +26,18 @@ void MYBLog(NSString *format, ...) {
     [mutableParams setValue:originParams forKey:@"body"];
     [mutableParams setValue:params forKey:@"head"];
     return mutableParams;
+}
+
++ (id)handelResponseObject:(id)responseObject associatedClass:(Class)aclass {
+    if (![aclass isSubclassOfClass:[MYBHttpModel class]]) {
+        return responseObject;
+    }
+    if (responseObject) {
+        NSDictionary *headDict = responseObject[@"head"];
+        id value = responseObject[@"body"];
+        return [aclass jsonToModel:value];
+    }
+    return responseObject;
 }
 
 @end

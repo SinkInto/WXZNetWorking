@@ -196,8 +196,6 @@
     for (id<MYBParamsFilterProtocol> f in filters) {
         params = [f filterOriginParams:params];
     }
-    
-    NSLog(@"%@",params);
     return params;
 }
 
