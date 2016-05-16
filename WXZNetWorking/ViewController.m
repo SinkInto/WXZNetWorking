@@ -31,7 +31,7 @@
     
     NSMutableDictionary *dict = [NSMutableDictionary dictionary];
     [dict setValue:@"13269532539" forKey:@"mobile"];
-    [dict setValue:@"123456" forKey:@"password"];
+    [dict setValue:@"12345" forKey:@"password"];
     [dict setValue:@0 forKey:@"isNotAuto"];
     MYBCustomRequest *request = [[MYBCustomRequest alloc] init];
     request.associatedModel = [MYBLoginAccount class];
@@ -39,9 +39,9 @@
     request.requestUrl = @"/clerk/loginAccount/login";
     
     [request customCompletionWithSuccess:^(id data, MYBError *error, NSDictionary *customDict) {
-        
+        NSLog(@"%@",data);
     } successMsg:@"登录成功" failure:^(id data, MYBError *error, NSDictionary *customDict) {
-        
+        NSLog(@"%@",error);
     } inView:self.view];
     
 //    [request customCompletionWithSuccess:^(id data, MYBError *error, NSDictionary *headDict) {

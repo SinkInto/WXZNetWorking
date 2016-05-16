@@ -48,7 +48,6 @@
 }
 
 - (void)completionWithRequest:(MYBRequest *)request successMsg:(NSString *)msg done:(MYBCustomRequestCompletionBlock)done {
-    NSLog(@"%ld----%@",request.responseCode,request.responseObject);
     UIWindow *window = [UIApplication sharedApplication].keyWindow;
     if (request.responseCode == 0) {
         [MYBAlertUtil showToast:window message:@"请检查网络"];
