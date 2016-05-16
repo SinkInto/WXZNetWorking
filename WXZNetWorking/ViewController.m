@@ -10,7 +10,7 @@
 #import "MYBEncryToos.h"
 #import "MYBNetWorkConfig.h"
 #import "MYBParamsFilter.h"
-#import "MYBRequest.h"
+#import "MYBCustomRequest.h"
 #import "MYBHttpModel.h"
 #import "MYBLoginAccount.h"
 
@@ -26,24 +26,30 @@
     MYBNetWorkConfig *config = [MYBNetWorkConfig sharedInstance];
     MYBParamsFilter *filter = [MYBParamsFilter filterWithParams:[self toHeadDict]];
     [config addParamFilter:filter];
-    config.baseUrl = @"http://api.meiyebang.com:9000";
+    config.baseUrl = @"http://192.168.64.100:9000";
     
     
     NSMutableDictionary *dict = [NSMutableDictionary dictionary];
     [dict setValue:@"13269532539" forKey:@"mobile"];
     [dict setValue:@"123456" forKey:@"password"];
     [dict setValue:@0 forKey:@"isNotAuto"];
-    MYBRequest *request = [[MYBRequest alloc] init];
-    request.associatedClass = [MYBLoginAccount class];
+    MYBCustomRequest *request = [[MYBCustomRequest alloc] init];
+    request.associatedModel = [MYBLoginAccount class];
     request.params = dict;
     request.requestUrl = @"/clerk/loginAccount/login";
     
-    [request startWithCompletionBlockWithSuccess:^(__kindof MYBRequest *request) {
-        MYBLoginAccount *account = request.responseObject;
-        NSLog(@"%@",account.code);
-    } failure:^(__kindof MYBRequest *request) {
-        NSLog(@"%@",request.responseError);
-    }];
+    [request customCompletionWithSuccess:^(id data, MYBError *error, NSDictionary *customDict) {
+        
+    } successMsg:@"登录成功" failure:^(id data, MYBError *error, NSDictionary *customDict) {
+        
+    } inView:self.view];
+    
+//    [request customCompletionWithSuccess:^(id data, MYBError *error, NSDictionary *headDict) {
+//        
+//        NSLog(@"\n%@----\n",data);
+//    } successMsg:@"登录成功" failure:^(id data, MYBError *error, NSDictionary *headDict) {
+//        
+//    }];
     // Do any additional setup after loading the view, typically from a nib.
 }
 

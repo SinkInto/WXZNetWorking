@@ -28,16 +28,15 @@ void MYBLog(NSString *format, ...) {
     return mutableParams;
 }
 
-+ (id)handelResponseObject:(id)responseObject associatedClass:(Class)aclass {
-    if (![aclass isSubclassOfClass:[MYBHttpModel class]]) {
-        return responseObject;
-    }
-    if (responseObject) {
-        NSDictionary *headDict = responseObject[@"head"];
-        id value = responseObject[@"body"];
-        return [aclass jsonToModel:value];
-    }
-    return responseObject;
-}
+
+//+ (id)handelResponseObject:(id)responseObject associatedClass:(Class)aclass {
+//    if (![aclass isSubclassOfClass:[MYBHttpModel class]]) {
+//        return responseObject;
+//    }
+//    if (responseObject) {
+//        return [aclass jsonToModel:responseObject[@"body"]];
+//    }
+//    return responseObject;
+//}
 
 @end

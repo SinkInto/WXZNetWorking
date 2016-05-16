@@ -27,11 +27,6 @@ typedef NS_ENUM(NSInteger , MYBRequestSerializerType) {
     MYBRequestSerializerTypeJSON,
 };
 
-@protocol HttpResponseObjectProtocol <NSObject>
-
-+ (id)httpResponseObject:(id)responseObject;
-
-@end
 
 typedef void(^MYBRequestCompletionBlock)(__kindof MYBRequest *request);
 typedef void (^FormDataBlock)(id <AFMultipartFormData> formData);
@@ -48,7 +43,6 @@ typedef void (^FormDataBlock)(id <AFMultipartFormData> formData);
 @property (nonatomic, copy) NSString *cdnUrl;
 @property (nonatomic, copy) NSString *requestUrl;
 @property (nonatomic, strong) NSDictionary *params;
-@property (nonatomic, strong) Class associatedClass;
 
 //请求头
 @property (nonatomic, strong) NSDictionary *requestHeaderFieldValueDictionary;

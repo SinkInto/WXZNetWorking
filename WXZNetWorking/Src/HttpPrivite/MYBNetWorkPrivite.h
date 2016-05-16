@@ -14,7 +14,5 @@ FOUNDATION_EXPORT void MYBLog(NSString *format, ...) NS_FORMAT_FUNCTION(1,2);
 
 + (NSDictionary *)paramsWithOriginParams:(NSDictionary *)originParams appendParams:(NSDictionary *)params;
 
-+ (id)handelResponseObject:(id)responseObject associatedClass:(Class)aclass;
-
 
 @end

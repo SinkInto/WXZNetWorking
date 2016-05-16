@@ -11,7 +11,6 @@
 
 @implementation MYBHttpModel
 
-
 #pragma mark - util 
 
 + (id)getFromJson:(NSDictionary *)dict {
@@ -20,11 +19,7 @@
 
 + (NSArray *)getArrayFromJson:(NSArray *)array {
     if (![array isKindOfClass:[NSArray class]]) return [NSArray new];
-    NSMutableArray *mutableArray = [[NSMutableArray alloc] init];
-    [array enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
-        [mutableArray addObject:[[self class] getFromJson:obj]];
-    }];
-    return mutableArray;
+    return [self mj_keyValuesArrayWithObjectArray:array];
 }
 
 + (id)jsonToModel:(id)json {
@@ -33,10 +28,10 @@
     else return json;
 }
 
-#pragma mark - HttpResponseObjectProtocol
-
-+ (id)httpResponseObject:(id)responseObject {
-    return [MYBNetWorkPrivite handelResponseObject:responseObject associatedClass:self];
-}
+//#pragma mark - HttpResponseObjectProtocol
+//
+//+ (id)httpResponseObject:(id)responseObject {
+//    return [MYBNetWorkPrivite handelResponseObject:responseObject associatedClass:self];
+//}
 
 @end

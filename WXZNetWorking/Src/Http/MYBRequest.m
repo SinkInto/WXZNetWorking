@@ -78,9 +78,6 @@
 
 - (void)setResponseObject:(id)responseObject {
     _responseObject = responseObject;
-    if (self.associatedClass) {
-        _responseObject = [self.associatedClass httpResponseObject:responseObject];
-    }
 }
 
 - (NSDictionary *)responseHeaders {

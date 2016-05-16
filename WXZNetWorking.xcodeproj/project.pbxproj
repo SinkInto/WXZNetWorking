@@ -11,6 +11,10 @@
 		F12A00011CE705BF002DA807 /* MYBEncryToos.m in Sources */ = {isa = PBXBuildFile; fileRef = F12A00001CE705BF002DA807 /* MYBEncryToos.m */; };
 		F12A00041CE705DE002DA807 /* MYBFileTool.m in Sources */ = {isa = PBXBuildFile; fileRef = F12A00031CE705DE002DA807 /* MYBFileTool.m */; };
 		F12A00071CE70693002DA807 /* MYBLoginAccount.m in Sources */ = {isa = PBXBuildFile; fileRef = F12A00061CE70693002DA807 /* MYBLoginAccount.m */; };
+		F12A00101CE96314002DA807 /* MYBCustomRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = F12A000F1CE96314002DA807 /* MYBCustomRequest.m */; };
+		F12A00131CE964DC002DA807 /* MYBError.m in Sources */ = {isa = PBXBuildFile; fileRef = F12A00121CE964DC002DA807 /* MYBError.m */; };
+		F12A00161CE997A3002DA807 /* MYBAlertUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = F12A00151CE997A3002DA807 /* MYBAlertUtil.m */; };
+		F12A00191CE997C3002DA807 /* UIAlertView+Block.m in Sources */ = {isa = PBXBuildFile; fileRef = F12A00181CE997C3002DA807 /* UIAlertView+Block.m */; };
 		F12AFFF21CE6F73F002DA807 /* MYBBatchRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = F12AFFE21CE6F73F002DA807 /* MYBBatchRequest.m */; };
 		F12AFFF31CE6F73F002DA807 /* MYBBatchRequestManager.m in Sources */ = {isa = PBXBuildFile; fileRef = F12AFFE41CE6F73F002DA807 /* MYBBatchRequestManager.m */; };
 		F12AFFF41CE6F73F002DA807 /* MYBNetWorkConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = F12AFFE61CE6F73F002DA807 /* MYBNetWorkConfig.m */; };
@@ -55,6 +59,14 @@
 		F12A00031CE705DE002DA807 /* MYBFileTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MYBFileTool.m; sourceTree = "<group>"; };
 		F12A00051CE70693002DA807 /* MYBLoginAccount.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MYBLoginAccount.h; sourceTree = "<group>"; };
 		F12A00061CE70693002DA807 /* MYBLoginAccount.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MYBLoginAccount.m; sourceTree = "<group>"; };
+		F12A000E1CE96314002DA807 /* MYBCustomRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MYBCustomRequest.h; sourceTree = "<group>"; };
+		F12A000F1CE96314002DA807 /* MYBCustomRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MYBCustomRequest.m; sourceTree = "<group>"; };
+		F12A00111CE964DC002DA807 /* MYBError.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MYBError.h; sourceTree = "<group>"; };
+		F12A00121CE964DC002DA807 /* MYBError.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MYBError.m; sourceTree = "<group>"; };
+		F12A00141CE997A3002DA807 /* MYBAlertUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MYBAlertUtil.h; sourceTree = "<group>"; };
+		F12A00151CE997A3002DA807 /* MYBAlertUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MYBAlertUtil.m; sourceTree = "<group>"; };
+		F12A00171CE997C3002DA807 /* UIAlertView+Block.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIAlertView+Block.h"; sourceTree = "<group>"; };
+		F12A00181CE997C3002DA807 /* UIAlertView+Block.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIAlertView+Block.m"; sourceTree = "<group>"; };
 		F12AFFE11CE6F73F002DA807 /* MYBBatchRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MYBBatchRequest.h; sourceTree = "<group>"; };
 		F12AFFE21CE6F73F002DA807 /* MYBBatchRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MYBBatchRequest.m; sourceTree = "<group>"; };
 		F12AFFE31CE6F73F002DA807 /* MYBBatchRequestManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MYBBatchRequestManager.h; sourceTree = "<group>"; };
@@ -159,6 +171,10 @@
 				F12AFFF11CE6F73F002DA807 /* MYBNetWorkPrivite.m */,
 				F12AFFFA1CE6F757002DA807 /* MYBHttpModel.h */,
 				F12AFFFB1CE6F757002DA807 /* MYBHttpModel.m */,
+				F12A000E1CE96314002DA807 /* MYBCustomRequest.h */,
+				F12A000F1CE96314002DA807 /* MYBCustomRequest.m */,
+				F12A00111CE964DC002DA807 /* MYBError.h */,
+				F12A00121CE964DC002DA807 /* MYBError.m */,
 			);
 			path = HttpPrivite;
 			sourceTree = "<group>";
@@ -175,6 +191,10 @@
 		F12AFFFE1CE7059D002DA807 /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				F12A00171CE997C3002DA807 /* UIAlertView+Block.h */,
+				F12A00181CE997C3002DA807 /* UIAlertView+Block.m */,
+				F12A00141CE997A3002DA807 /* MYBAlertUtil.h */,
+				F12A00151CE997A3002DA807 /* MYBAlertUtil.m */,
 				F12A00021CE705DE002DA807 /* MYBFileTool.h */,
 				F12A00031CE705DE002DA807 /* MYBFileTool.m */,
 				F12AFFFF1CE705BF002DA807 /* MYBEncryToos.h */,
@@ -446,12 +466,16 @@
 				F18AB5C21CD75E8D00A433FF /* main.m in Sources */,
 				F12A00071CE70693002DA807 /* MYBLoginAccount.m in Sources */,
 				F12AFFF91CE6F73F002DA807 /* MYBNetWorkPrivite.m in Sources */,
+				F12A00161CE997A3002DA807 /* MYBAlertUtil.m in Sources */,
 				F12AFFFC1CE6F757002DA807 /* MYBHttpModel.m in Sources */,
+				F12A00131CE964DC002DA807 /* MYBError.m in Sources */,
 				F12AFFF51CE6F73F002DA807 /* MYBParamsFilter.m in Sources */,
 				F12AFFF71CE6F73F002DA807 /* MYBRequestManager.m in Sources */,
+				F12A00101CE96314002DA807 /* MYBCustomRequest.m in Sources */,
 				F12AFFF41CE6F73F002DA807 /* MYBNetWorkConfig.m in Sources */,
 				F12AFFF31CE6F73F002DA807 /* MYBBatchRequestManager.m in Sources */,
 				F12AFFF21CE6F73F002DA807 /* MYBBatchRequest.m in Sources */,
+				F12A00191CE997C3002DA807 /* UIAlertView+Block.m in Sources */,
 				F12A00041CE705DE002DA807 /* MYBFileTool.m in Sources */,
 				F12A00011CE705BF002DA807 /* MYBEncryToos.m in Sources */,
 			);

@@ -8,10 +8,8 @@
 
 #import <Foundation/Foundation.h>
 #import "MJExtension.h"
-#import "MYBRequest.h"
 
-@interface MYBHttpModel : NSObject <HttpResponseObjectProtocol>
-
+@interface MYBHttpModel : NSObject 
 
 + (id)jsonToModel:(id)json;
 
