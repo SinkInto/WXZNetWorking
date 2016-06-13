@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "MJExtension.h"
 
-@interface MYBHttpModel : NSObject 
+@interface MYBModel : NSObject 
 
 + (id)jsonToModel:(id)json;
 

@@ -9,7 +9,7 @@
 #import "MYBCustomRequest.h"
 #import "MBProgressHUD.h"
 #import "MYBAlertUtil.h"
-#import "MYBHttpModel.h"
+#import "MYBModel.h"
 
 @implementation MYBCustomRequest
 

@@ -11,7 +11,7 @@
 #import "MYBNetWorkConfig.h"
 #import "MYBParamsFilter.h"
 #import "MYBCustomRequest.h"
-#import "MYBHttpModel.h"
+#import "MYBModel.h"
 #import "MYBLoginAccount.h"
 
 @interface ViewController ()
@@ -31,7 +31,7 @@
     
     NSMutableDictionary *dict = [NSMutableDictionary dictionary];
     [dict setValue:@"13269532539" forKey:@"mobile"];
-    [dict setValue:@"12345" forKey:@"password"];
+    [dict setValue:@"123456" forKey:@"password"];
     [dict setValue:@0 forKey:@"isNotAuto"];
     MYBCustomRequest *request = [[MYBCustomRequest alloc] init];
     request.associatedModel = [MYBLoginAccount class];
@@ -65,7 +65,7 @@
     NSMutableDictionary *headContentDict = [NSMutableDictionary dictionary];
     [headContentDict setValue:@"IOS_B_PAD_COMPANY" forKey:@"appType"];
     [headContentDict setValue:nowVersion forKey:@"appVersion"];
-    [headContentDict setValue:@"2.4.1" forKey:@"apiVersion"];
+    [headContentDict setValue:@"2.5.0" forKey:@"apiVersion"];
     [headContentDict setValue:@"" forKey:@"deviceToken"];
     [headContentDict setValue:@""  forKey:@"token"];
     [headContentDict setValue:[MYBEncryToos encryMessage:[NSString stringWithFormat:@"%@",[NSDate date]]] forKey:@"digest"];//md5

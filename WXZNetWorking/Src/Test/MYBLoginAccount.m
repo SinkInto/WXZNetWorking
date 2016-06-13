@@ -10,4 +10,9 @@
 
 @implementation MYBLoginAccount
 
++ (id)getFromJson:(NSDictionary *)dict {
+    
+    return [[self alloc] mj_setKeyValues:dict];
+}
+
 @end

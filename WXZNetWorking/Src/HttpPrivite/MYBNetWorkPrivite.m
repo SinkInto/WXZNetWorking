@@ -7,7 +7,7 @@
 //
 
 #import "MYBNetWorkPrivite.h"
-#import "MYBHttpModel.h"
+#import "MYBModel.h"
 
 void MYBLog(NSString *format, ...) {
 #ifdef DEBUG

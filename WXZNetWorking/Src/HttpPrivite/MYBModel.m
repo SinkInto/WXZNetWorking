@@ -6,10 +6,10 @@
 //  Copyright © 2016年 王向召. All rights reserved.
 //
 
-#import "MYBHttpModel.h"
+#import "MYBModel.h"
 #import "MYBNetWorkPrivite.h"
 
-@implementation MYBHttpModel
+@implementation MYBModel
 
 #pragma mark - util 
 
@@ -27,11 +27,5 @@
     else if ([json isKindOfClass:[NSDictionary class]]) return [[self class] getFromJson:json];
     else return json;
 }
-
-//#pragma mark - HttpResponseObjectProtocol
-//
-//+ (id)httpResponseObject:(id)responseObject {
-//    return [MYBNetWorkPrivite handelResponseObject:responseObject associatedClass:self];
-//}
 
 @end
